@@ -1,0 +1,26 @@
+projection;
+strict ( 1 );
+use draft;
+
+define behavior for Zrap_C_CARRIER //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _Connection { create; with draft; }
+}
+
+define behavior for zrap_c_connection //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Carrier { with draft; }
+}

@@ -1,0 +1,76 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Carrier',
+        typeNamePlural: 'Carrier',
+        title: {
+            type: #STANDARD, value: 'Name'
+        },
+        description: {
+            value: 'CarrierID'
+        }
+    },
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'Name',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
+annotate entity Zrap_C_CARRIER with
+{
+  @UI.facet: [
+
+     {
+        label: 'Carrier Details',
+        id: 'CarrierInfo',
+        type: #COLLECTION,
+        position: 10
+     },
+     {
+        label: 'Carrier',
+        id: 'Carrier',
+        type: #IDENTIFICATION_REFERENCE,
+        purpose: #STANDARD,
+        parentId: 'CarrierInfo',
+        position: 10
+     },
+    {
+        id: 'Connection',
+        purpose: #STANDARD,
+        type: #LINEITEM_REFERENCE,
+        label: 'Connections',
+        position: 20,
+        targetElement: '_Connection'
+    }
+  ]
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  CarrierId;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  Name;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  CurrencyCode;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  LocalCreatedBy;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  LocalCreatedAt;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60 }]
+  LocalLastChangedBy;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.identification: [{ position: 70 }]
+  LocalLastChangedAt;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.identification: [{ position: 80 }]
+  LastChangedAt;
+
+}

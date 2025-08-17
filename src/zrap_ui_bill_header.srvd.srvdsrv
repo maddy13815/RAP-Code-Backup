@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition of Bill Doc Head'
+define service Zrap_ui_bill_header {
+  expose zrap_c_bill_header as BillingDocumentHeader;
+  expose ZRAP_C_BILL_ITEM   as BillingDocumentItem;
+}

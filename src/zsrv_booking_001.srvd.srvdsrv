@@ -1,0 +1,4 @@
+@EndUserText.label: 'service definition for booking'
+define service ZSRV_BOOKING_001 {
+  expose ZI_RAP_BOOK_001;
+}

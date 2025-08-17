@@ -1,0 +1,26 @@
+managed implementation in class zbp_i_rap_book_001 unique;
+//strict ( 2 );
+
+define behavior for ZI_RAP_BOOK_001 //alias <alias_name>
+persistent table ztb_rap_book
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  //  field ( readonly ) Travel_Id, Booking_Id;
+  mapping for ztb_rap_book
+    {
+      Travel_Id     = travel_id;
+      Booking_Id    = booking_id;
+      Booking_Date  = booking_date;
+      Customer_Id   = customer_id;
+      Carrier_Id    = carrier_id;
+      Connection_Id = connection_id;
+      Flight_Date   = flight_date;
+      Flight_Price  = flight_price;
+      Currency_Code = currency_code;
+    }
+}

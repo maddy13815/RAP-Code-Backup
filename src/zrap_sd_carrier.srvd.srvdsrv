@@ -1,0 +1,5 @@
+@EndUserText.label: 'Carrier Service'
+define service ZRAP_SD_Carrier {
+  expose Zrap_C_CARRIER    as Carrier;
+  expose zrap_c_connection as Connection;
+}

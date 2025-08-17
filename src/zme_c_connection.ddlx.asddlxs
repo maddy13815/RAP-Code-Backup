@@ -1,0 +1,67 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Connection',
+        typeNamePlural: 'Connections',
+        title: {
+            type: #STANDARD, value: 'ConnectionId'
+        }
+    },
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'ConnectionId',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
+annotate entity zrap_c_connection
+    with 
+{
+     @UI.facet: [
+       {
+          label: 'Connection Details',
+          id: 'ConnectionInfo',
+          type: #COLLECTION,
+          position: 10
+       },
+       {
+          label: 'Connection',
+          id: 'Connection',
+          type: #IDENTIFICATION_REFERENCE,
+          purpose: #STANDARD,
+          parentId: 'ConnectionInfo',
+          position: 10
+       }
+    ]
+
+
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [{ position: 10 }]
+  CarrierId;
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [{ position: 20 }]
+  ConnectionId;
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [{ position: 30 }]
+  AirportFromId;
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.identification: [{ position: 40 }]
+  AirportToId;
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.identification: [{ position: 50 }]
+  DepartureTime;
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.identification: [{ position: 60 }]
+  ArrivalTime;
+  @UI.lineItem: [ { position: 70 } ]
+  @UI.identification: [{ position: 70 }]
+  Distance;
+  @UI.lineItem: [ { position: 80 } ]
+  @UI.identification: [{ position: 80 }]
+  DistanceUnit;
+    
+}
