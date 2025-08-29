@@ -1,4 +1,10 @@
-CLASS zbp_rap_bill_header DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zrap_bill_header.
+class ZBP_RAP_BILL_HEADER definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 

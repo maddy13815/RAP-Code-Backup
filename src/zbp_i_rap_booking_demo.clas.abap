@@ -1,4 +1,10 @@
-CLASS zbp_i_rap_booking_demo DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_rap_trav_01.
+class ZBP_I_RAP_BOOKING_DEMO definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 

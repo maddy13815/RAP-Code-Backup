@@ -1,4 +1,10 @@
-CLASS zbp_rap_i_carrier DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zrap_i_carrier.
+class ZBP_RAP_I_CARRIER definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 

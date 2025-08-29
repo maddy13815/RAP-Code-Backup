@@ -1,19 +1,36 @@
-@AbapCatalog.sqlViewName: 'ZDIMEAIRLINE'
-@AbapCatalog.compiler.compareFilter: true
-@AccessControl.authorizationCheck: #CHECK
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Airline'
-
-@Analytics.dataCategory: #DIMENSION
-
-define view Z_Dimension_Airline
-  as select from /dmo/carrier
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #S,
+    dataClass: #MIXED
+}
+define view entity Z_Dimension_Airline
+  as select from I_CalendarDate
 {
-      @ObjectModel.text.element: [ 'AirlineName' ]
-  key carrier_id    as Airline,
-
-      @Semantics.text: true
-      name          as AirlineName,
-
-      @Semantics.currencyCode: true
-      currency_code as Currency
+  key CalendarDate,
+      CalendarYear,
+      CalendarQuarter,
+      CalendarMonth,
+      CalendarWeek,
+      CalendarDay,
+      YearMonth,
+      YearQuarter,
+      YearWeek,
+      WeekDay,
+      FirstDayOfWeekDate,
+      FirstDayOfMonthDate,
+      LastDayOfMonthDate,
+      CalendarDayOfYear,
+      YearDay,
+      /* Associations */
+      _CalendarMonth,
+      _CalendarQuarter,
+      _CalendarWeek,
+      _CalendarYear,
+      _WeekDay,
+      _YearMonth,
+      _YearWeek
 }

@@ -1,4 +1,10 @@
-CLASS zbp_i_rap_trav_01 DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_rap_trav_01.
+class ZBP_I_RAP_TRAV_01 definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
